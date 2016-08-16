@@ -74,3 +74,4 @@ end
 
 gem 'admin_lte-rails'
 gem 'jquery-validation-rails'
+
