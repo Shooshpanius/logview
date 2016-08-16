@@ -6,7 +6,9 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+group :development do
+  gem 'puma'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,6 +37,14 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
@@ -46,3 +56,21 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap-rtl'
+  gem 'rails-assets-jquery-knob'
+  gem 'rails-assets-bootstrap-daterangepicker'
+  gem 'rails-assets-jquery-sparkline'
+  gem 'rails-assets-jquery-icheck'
+  gem 'rails-assets-admin-lte'
+end
+
+group :production do
+  gem 'unicorn'
+end
+
+
+
+gem 'admin_lte-rails'
+gem 'jquery-validation-rails'
