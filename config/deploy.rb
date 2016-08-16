@@ -1,36 +1,143 @@
 # config valid only for current version of Capistrano
 lock '3.6.0'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:Shooshpanius/logview.git'
+set :application, 'logview'
+application = 'logview'
+set :rvm_type, :user
+set :rvm_ruby_version, '2.3.0'
+set :deploy_to, '/home/logger/www/logview'
+deploy_to = '/home/logger/www/logview'
+set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
+unicorn_conf = "#{deploy_to}/current/config/unicorn.rb"
+set :unicorn_pid, '/home/logger/www/logview/run/unicorn.pid'
+unicorn_pid = '/home/logger/www/logview/run/unicorn.pid'
+set :rails_env, "production"
+rails_env = "production"
 
-# Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :ssh_options, {
+                    forward_agent: true
+                    # port: 11122,
+                    # paranoid: true,
+                    # keys: "~/.ssh/id_rsa"
+                }
 
-# Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
+namespace :git do
+  desc 'Deploy'
+  task :deploy do
+    ask(:message, "Commit message?")
+    run_locally do
+      execute "git add -A"
+      execute "git commit -m '#{fetch(:message)}'"
+      execute "git push"
+    end
+  end
+end
 
-# Default value for :scm is :git
-# set :scm, :git
 
-# Default value for :format is :airbrussh.
-# set :format, :airbrussh
 
-# You can configure the Airbrussh format using :format_options.
-# These are the defaults.
-# set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 
-# Default value for :pty is false
-# set :pty, true
 
-# Default value for :linked_files is []
-# append :linked_files, 'config/database.yml', 'config/secrets.yml'
+namespace :db do
 
-# Default value for linked_dirs is []
-# append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
+  task :rollback do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:rollback"
+        end
+      end
+    end
+  end
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+  task :migrate do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:migrate"
+        end
+      end
+    end
+  end
 
-# Default value for keep_releases is 5
-# set :keep_releases, 5
+end
+
+
+namespace :deploy do
+
+
+
+  namespace :thin do
+    task :restart do
+      on roles(:all) do
+        execute  "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{deploy_to}/current && bundle exec unicorn_rails -c #{unicorn_conf} -E #{rails_env} -D; fi"
+      end
+    end
+    task :start do
+      on roles(:all) do
+        execute  "bundle exec unicorn_rails -c #{unicorn_conf} -E #{rails_env} -D"
+      end
+    end
+    task :stop do
+      on roles(:all) do
+        execute  "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
+      end
+    end
+  end
+
+
+  desc 'Setup'
+  task :setup do
+    on roles(:all) do
+      execute "mkdir  #{shared_path}/config/"
+      execute "mkdir  /home/logger/www/#{application}/run/"
+      execute "mkdir  /home/logger/www/#{application}/log/"
+      execute "mkdir  /home/logger/www/#{application}/socket/"
+      execute "mkdir #{shared_path}/system"
+
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:create"
+        end
+      end
+
+
+
+    end
+  end
+
+  desc 'Create symlink'
+  task :symlink do
+    on roles(:all) do
+      execute "ln -s #{shared_path}/system #{release_path}/public/system"
+    end
+  end
+
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      "restart #{application}"
+    end
+  end
+
+  after :finishing, 'deploy:cleanup'
+  after :finishing, 'deploy:restart'
+
+  after :updating, 'deploy:symlink'
+
+  before :setup, 'deploy:starting'
+  before :setup, 'deploy:updating'
+  before :setup, 'bundler:install'
+
+
+  after :finishing, "deploy:thin:restart"
+
+
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
+  end
+
+end
