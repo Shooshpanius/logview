@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   namespace :receiver do
-    resources :win_eventlog, path: 'login/(:action)(:id)(.:format)'
+    resources :win_eventlog, path: 'win_eventlog/(:action)(:id)(.:format)'
   end
 
 end
