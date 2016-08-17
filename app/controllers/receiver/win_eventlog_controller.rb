@@ -4,6 +4,10 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
 
+    CreateWinEventLogs.create(
+        comment: params[]
+    )
+
     render :nothing => true
 
   end
