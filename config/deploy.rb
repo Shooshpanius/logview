@@ -123,6 +123,7 @@ namespace :deploy do
 
   after :finishing, 'deploy:cleanup'
   after :finishing, 'deploy:restart'
+  after :finishing, 'db:migrate'
 
   after :updating, 'deploy:symlink'
 
