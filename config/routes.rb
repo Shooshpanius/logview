@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
 
+  namespace :srv do
+    resources :login, path: 'login/(:action)(:id)(.:format)'
+  end
 
 end
