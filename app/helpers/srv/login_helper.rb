@@ -1,0 +1,2 @@
+module Srv::LoginHelper
+end
