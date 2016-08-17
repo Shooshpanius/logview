@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require admin_lte/admin_lte
+//= require jquery.validate
+//= require_self
