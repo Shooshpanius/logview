@@ -5,7 +5,7 @@ class Receiver::WinEventlogController < ApplicationController
   def in
 
     WinEventLog.create(
-        comment: params[:Hostname]
+        comment: params.to_s
     )
 
     render :nothing => true
