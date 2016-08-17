@@ -55,6 +55,7 @@ namespace :db do
     on roles(:all) do
       within release_path do
         with rails_env: fetch(:rails_env) do
+          execute "cd #{deploy_to}/current"
           execute :rake, "db:migrate"
         end
       end
