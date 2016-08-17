@@ -6,6 +6,7 @@ class Receiver::WinEventlogController < ApplicationController
 
     render :nothing => true
 
-
   end
+
+
 end

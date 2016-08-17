@@ -1,0 +1,2 @@
+class WinEventLog < ApplicationRecord
+end
