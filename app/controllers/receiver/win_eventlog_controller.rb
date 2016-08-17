@@ -4,9 +4,7 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
 
-    WinEventLog.create(
-        comment: params[:EventTime]
-    )
+    WinEventLog.create( :comment => params[:EventTime])
 
     render :nothing => true
 
