@@ -4,11 +4,11 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
 
-    # WinEventLog.create(
-    #     comment: params.to_xml
-    # )
+    WinEventLog.create(
+        comment: params[:EventTime]
+    )
 
-    render :text => params[:EventTime]
+    render :nothing => true
 
   end
 
