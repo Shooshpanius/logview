@@ -1,0 +1,2 @@
+module Receiver::WinEventlogHelper
+end
