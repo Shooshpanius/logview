@@ -4,7 +4,7 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
 
-    CreateWinEventLogs.create(
+    WinEventLog.create(
         comment: params[]
     )
 
