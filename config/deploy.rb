@@ -14,6 +14,7 @@ set :unicorn_pid, '/home/logger/www/logview/run/unicorn.pid'
 unicorn_pid = '/home/logger/www/logview/run/unicorn.pid'
 set :rails_env, "production"
 rails_env = "production"
+rake_migrate = "#{deploy_to}/current/bin/rake db:migrate"
 
 set :ssh_options, {
                     forward_agent: true
@@ -54,7 +55,7 @@ namespace :db do
     on roles(:all) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :rake, "db:migrate"
+          execute "#{rake_migrate}"
         end
       end
     end
