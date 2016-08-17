@@ -4,7 +4,7 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
 
-    WinEventLog.create( :comment => params[:EventTime])
+    WinEventLog.create( :comment => params[].to_json)
 
     render :nothing => true
 
