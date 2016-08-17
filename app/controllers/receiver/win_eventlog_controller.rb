@@ -1,12 +1,12 @@
 class Receiver::WinEventlogController < ApplicationController
 
-  skip_before_filter :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   def in
 
-    WinEventLog.create( :comment => params.to_json)
+    # WinEventLog.create( :comment => params.to_xml)
 
-    render :nothing => true
+    render :head => true
 
   end
 
