@@ -10,6 +10,7 @@ class Receiver::WinEventlogController < ApplicationController
         case event_id
           when 0,1,2,4,6,10,18,20,25,27,30,32,33,34,35,36
             params.permit!
+            params[:AccountName] = params[:AccountName].force_encoding("UTF-8")
             WinSystemLog.create(params)
           else
             WinEventLog.create(
