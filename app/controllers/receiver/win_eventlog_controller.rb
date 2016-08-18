@@ -6,7 +6,7 @@ class Receiver::WinEventlogController < ApplicationController
 
     WinEventLog.create(
 
-      :event => params.to_xml,
+      :event => params.to_json,
       :event_id => params[:EventID]
 
     )
