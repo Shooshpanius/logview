@@ -1,0 +1,2 @@
+class WinSystemLog < ApplicationRecord
+end
