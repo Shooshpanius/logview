@@ -4,10 +4,12 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
 
       t.string    'AccountName'
       t.string    'AccountType'
+      t.string    'action'
       t.string    'BitlockerUserInputTime'
       t.string    'BootType'
       t.string    'Category'
       t.string    'Channel'
+      t.string    'controller'
       t.string    'DeviceName'
       t.string    'DeviceNameLength'
       t.string    'DeviceTime'
