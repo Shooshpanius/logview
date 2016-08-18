@@ -4,10 +4,13 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
 
+    a = "Log"
+
     WinEventLog.create(
 
       :event => params.to_json,
-      :event_id => params[:EventID]
+      :event_id => params[:EventID],
+      :channel => params[:Channel]
 
     )
 
