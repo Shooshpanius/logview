@@ -4,7 +4,12 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
 
-    WinEventLog.create( :comment => params.to_xml)
+    WinEventLog.create(
+
+      :event => params.to_xml,
+      :event_id => params[:EventID]
+
+    )
 
     render :head => true
 
