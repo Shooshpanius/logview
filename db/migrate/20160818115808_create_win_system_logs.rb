@@ -6,6 +6,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.string    'AccountType'
       t.string    'action'
       t.string    'BitlockerUserInputTime'
+      t.string    'BootMenuPolicy'
       t.string    'BootType'
       t.string    'Category'
       t.string    'Channel'
