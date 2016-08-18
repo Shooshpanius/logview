@@ -29,7 +29,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.string    'FilterID'
       t.string    'FinalStatus'
       t.string    'Hostname'
-      t.integer   'Keywords'
+      t.string    'Keywords'
       t.string    'Level'
       t.integer   'LastBootGood'
       t.integer   'LastShutdownGood'
