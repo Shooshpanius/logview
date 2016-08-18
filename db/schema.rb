@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 20160817151944) do
   end
 
   create_table "win_event_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "comment",    limit: 65535
+    t.integer  "event_id"
+    t.text     "event",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
