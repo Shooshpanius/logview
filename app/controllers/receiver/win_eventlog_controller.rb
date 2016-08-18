@@ -9,7 +9,7 @@ class Receiver::WinEventlogController < ApplicationController
         event_id = params[:EventID].to_i
         case event_id
           when 0,1,2,4,6,10,18,20,25,27,30,32,33,34,35,36
-            WinSystemLog.create(JSON.parse(params))
+            WinSystemLog.create(params)
           else
             WinEventLog.create(
                 :event => params.to_xml,
