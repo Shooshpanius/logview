@@ -33,6 +33,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.integer   'LastShutdownGood'
       t.string    'LoadOSImageStart'
       t.text      'Message'
+      t.datetime  'NewTime'
       t.string    'NTSTATUS'
       t.string    'Opcode'
       t.integer   'OpcodeValue'
