@@ -19,6 +19,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'Message'
       t.string    'Opcode'
       t.integer   'OpcodeValue'
+      t.text      'PrivilegeList'
       t.integer   'ProcessID'
       t.string    'ProcessName'
       t.string    'ProviderGuid'
