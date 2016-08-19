@@ -2,7 +2,6 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
   def change
     create_table(:win_system_logs, :options=> 'ENGINE=MyISAM DEFAULT CHARSET=utf8') do |t|
 
-
       t.string    'AccountName'
       t.string    'AccountType'
       t.string    'AdapterName'
