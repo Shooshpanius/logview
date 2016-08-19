@@ -93,6 +93,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.string    'Status'
       t.datetime  'StopTime'
       t.integer   'Task'
+      t.string    'TimeProvider'
       t.string    'TimeSource'
       t.integer   'ThreadID'
       t.string    'TSId'
