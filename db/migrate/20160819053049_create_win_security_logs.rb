@@ -1,6 +1,6 @@
 class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
   def change
-    create_table(:win_security_logs, :options=> 'ENGINE=MyISAM ROW_FORMAT=DYNAMIC DEFAULT CHARSET=utf8') do |t|
+    create_table(:win_security_logs, :options=> 'ROW_FORMAT=DYNAMIC CHARSET=utf8') do |t|
 
       t.string    'action'
       t.string    'ActivityID'
