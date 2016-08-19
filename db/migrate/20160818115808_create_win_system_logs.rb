@@ -21,6 +21,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.string    'DeviceVersionMinor'
       t.string    'Domain'
       t.string    'DriveName'
+      t.string    'DriverName'
       t.string    'DriverNameLength'
       t.string    'DwordVal'
       t.string    'EntryCount'
