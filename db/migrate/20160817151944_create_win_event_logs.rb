@@ -4,7 +4,7 @@ class CreateWinEventLogs < ActiveRecord::Migration[5.0]
 
       t.integer  'event_id'
       t.text  'event'
-      t.text  'channel'
+      t.string  'channel'
 
       t.timestamps
     end
