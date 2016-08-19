@@ -9,22 +9,22 @@ class Receiver::WinEventlogController < ApplicationController
         begin
           WinSystemLog.create(params)
         rescue
-          WinEventLog.create(
-              :event => params.to_xml,
-              :event_id => params[:EventID],
-              :channel => params[:Channel].to_s + "_rescue"
-          )
+          # WinEventLog.create(
+          #     :event => params.to_xml,
+          #     :event_id => params[:EventID],
+          #     :channel => params[:Channel].to_s + "_rescue"
+          # )
         end
 
       when "Security"
         begin
           WinSecurityLog.create(params)
         rescue
-          WinEventLog.create(
-              :event => params.to_xml,
-              :event_id => params[:EventID],
-              :channel => params[:Channel].to_s + "_rescue"
-          )
+          # WinEventLog.create(
+          #     :event => params.to_xml,
+          #     :event_id => params[:EventID],
+          #     :channel => params[:Channel].to_s + "_rescue"
+          # )
         end
       else
         WinEventLog.create(
