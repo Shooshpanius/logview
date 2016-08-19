@@ -68,6 +68,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.string    'SourceName'
       t.string    'SourceTag'
       t.string    'StartOSImageStart'
+      t.datetime  'StopTime'
       t.integer   'Task'
       t.string    'TimeSource'
       t.integer   'ThreadID'
