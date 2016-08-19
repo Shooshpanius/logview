@@ -16,6 +16,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.string    'IpPort'
       t.string    'Keywords'
       t.string    'LogonGuid'
+      t.string    'LogonType'
       t.text      'Message'
       t.string    'Opcode'
       t.integer   'OpcodeValue'
