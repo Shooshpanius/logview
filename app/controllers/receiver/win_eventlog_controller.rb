@@ -4,6 +4,7 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
     params.permit!
+    # params[:AccountName] =
     log_channel_event = params[:Channel].to_s
     case log_channel_event
       when "System"
