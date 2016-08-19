@@ -4,7 +4,7 @@ class Receiver::WinEventlogController < ApplicationController
 
   def in
     params.permit!
-    # params[:AccountName] =
+    params[:AccountName] = params[:AccountName].force_encoding('utf-8').encode
     log_channel_event = params[:Channel].to_s
     case log_channel_event
       when "System"
