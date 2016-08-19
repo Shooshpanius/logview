@@ -45,6 +45,8 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.integer   'ProcessID'
       t.string    'ProcessName'
       t.string    'ProviderGuid'
+      t.string    'PuaCount'
+      t.string    'PuaPolicyId'
       t.integer   'RecordNumber'
       t.string    'RestrictedAdminMode'
       t.integer   'SeverityValue'
