@@ -30,6 +30,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.string    'ExtraInfoString'
       t.string    'FilterID'
       t.string    'FinalStatus'
+      t.string    'HiveNameLength'
       t.string    'Hostname'
       t.string    'Keywords'
       t.string    'Level'
