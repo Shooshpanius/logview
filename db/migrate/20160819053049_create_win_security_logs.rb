@@ -74,6 +74,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.integer   'Version'
       t.string    'VirtualAccount'
       t.text      'win_eventlog'
+      t.string    'WorkstationName'
 
       t.timestamps
     end
