@@ -1,0 +1,2 @@
+class WinSecurityLog < ApplicationRecord
+end
