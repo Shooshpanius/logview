@@ -35,6 +35,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.integer   'SeverityValue'
       t.string    'Severity'
       t.string    'SourceModuleName'
+      t.string    'SourceModuleType'
       t.string    'SourceName'
       t.string    'SubjectDomainName'
       t.string    'SubjectLogonId'
