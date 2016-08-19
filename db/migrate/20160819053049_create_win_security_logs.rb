@@ -35,6 +35,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.string    'TargetDomainName'
       t.string    'TargetInfo'
       t.string    'TargetLogonGuid'
+      t.string    'TargetLogonId'
       t.string    'TargetServerName'
       t.string    'TargetUserName'
       t.string    'TargetUserSid'
