@@ -3,6 +3,7 @@ class Receiver::WinEventlogController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def in
+    params.permit!
     log_channel_event = params[:Channel].to_s
     case log_channel_event
       when "System"
