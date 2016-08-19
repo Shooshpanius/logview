@@ -1,6 +1,6 @@
 class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
   def change
-    create_table(:win_security_logs, :options=> 'ENGINE=InnoDB ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8 CHARSET=utf8') do |t|
+    create_table :win_security_logs do |t|
 
       t.string    'action'
       t.string    'ActivityID'

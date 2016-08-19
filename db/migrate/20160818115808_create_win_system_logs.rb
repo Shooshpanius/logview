@@ -1,6 +1,6 @@
 class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
   def change
-    create_table(:win_system_logs, :options=> 'ENGINE=InnoDB ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8 CHARSET=utf8') do |t|
+    create_table :win_system_logs do |t|
 
       t.text    'AccountName'
       t.text    'AccountType'
