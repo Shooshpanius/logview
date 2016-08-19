@@ -45,7 +45,7 @@ namespace :db do
     on roles(:all) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :rake, "db:rollback"
+          execute :rake, "db:rollback STEP=3"
         end
       end
     end
@@ -125,6 +125,7 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
   after :finishing, 'deploy:restart'
   after :finishing, 'db:migrate'
+  before :finishing, 'db:rollback'
 
   after :updating, 'deploy:symlink'
 
