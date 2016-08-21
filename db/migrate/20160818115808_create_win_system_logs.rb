@@ -36,6 +36,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.boolean   'ERROR-EVT-UNRESOLVED'
       t.boolean   'ERROR_EVT_UNRESOLVED'
       t.text      'ErrorCode'
+      t.text      'ErrorDescription'
       t.datetime  'EventTime'
       t.integer   'EventID'
       t.text      'EventType'
