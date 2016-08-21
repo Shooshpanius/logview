@@ -34,6 +34,8 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'LogonProcessName'
       t.text      'MandatoryLabel'
       t.text      'Message'
+      t.text      'MemberName'
+      t.text      'MemberSid'
       t.text      'NewProcessId'
       t.text      'NewProcessName'
       t.datetime  'NewTime'
