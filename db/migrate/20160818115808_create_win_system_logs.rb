@@ -78,6 +78,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'Interface'
       t.text      'InternalCode'
       t.text      'Ipaddress'
+      t.text      'KDCRealm'
       t.text      'KeysUpdated'
       t.text      'Keywords'
       t.text      'Level'
