@@ -25,6 +25,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'FilesScoped'
       t.text      'Hostname'
       t.text      'Keywords'
+      t.text      'ListenerAdapterProtocol'
       t.text      'Message'
       t.text      'Opcode'
       t.text      'OpcodeValue'
