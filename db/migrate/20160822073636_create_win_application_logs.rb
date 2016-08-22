@@ -4,6 +4,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
 
       t.text      'Category'
       t.text      'Channel'
+      t.text      'controller'
       t.text      'EventID'
       t.datetime  'EventReceivedTime'
       t.datetime  'EventTime'
