@@ -14,6 +14,11 @@ class Receiver::WinEventlogController < ApplicationController
     case log_channel_event
       when "System"
        # begin
+
+          if params[:EventID] == 20
+            params.sub!('errorCode', 'ErrorCode')
+          end
+
           WinSystemLog.create(params)
        # rescue
        #    WinEventLog.create(
