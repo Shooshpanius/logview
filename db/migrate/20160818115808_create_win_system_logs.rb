@@ -134,6 +134,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'schedinstalldate'
       t.text      'schedinstalltime'
       t.text      'Sent UpdateServer'
+      t.text      'Server'
       t.text      'ServiceName'
       t.text      'ServiceType'
       t.text      'ServiceVersion'
