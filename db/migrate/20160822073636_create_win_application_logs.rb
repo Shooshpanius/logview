@@ -15,6 +15,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'Domain'
       t.text      'ERROR_EVT_UNRESOLVED'
       t.text      'ErrorCode'
+      t.text      'ErrorMessage'
       t.text      'EventID'
       t.datetime  'EventReceivedTime'
       t.datetime  'EventTime'
