@@ -8,6 +8,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'AccessMask'
       t.text      'AccountExpires'
       t.text      'AccountSessionIdentifier'
+      t.text      'ActiveProfile'
       t.text      'AdditionalInfo'
       t.text      'AdditionalInfo2'
       t.text      'AdvancedOptions'
