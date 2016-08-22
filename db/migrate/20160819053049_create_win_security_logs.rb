@@ -12,6 +12,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'AuthenticationPackageName'
       t.text      'CallerProcessId'
       t.text      'CallerProcessName'
+      t.text      'Categories'
       t.text      'Category'
       t.text      'Channel'
       t.text      'ConfigAccessPolicy'
