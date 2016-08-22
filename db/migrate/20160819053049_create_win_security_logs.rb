@@ -35,6 +35,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'EventType'
       t.datetime  'EventReceivedTime'
       t.text      'FlightSigning'
+      t.text      'GPOList'
       t.text      'HandleId'
       t.text      'HomeDirectory'
       t.text      'HomePath'
