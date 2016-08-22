@@ -49,6 +49,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.boolean   'ERROR_EVT_UNRESOLVED'
       t.text      'error'
       t.text      'ErrorCode'
+      t.text      'errorCode'
       t.text      'ErrorDescription'
       t.text      'ErrorMessage'
       t.datetime  'EventTime'
@@ -84,6 +85,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.integer   'LastShutdownGood'
       t.text      'LoadOSImageStart'
       t.text      'MajorVersion'
+      t.text      'ManualPeer'
       t.text      'MaximumPerformancePercent'
       t.text      'MinimumPerformancePercent'
       t.text      'MinimumThrottlePercent'
@@ -137,6 +139,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'schedinstalltime'
       t.text      'Sent UpdateServer'
       t.text      'Server'
+      t.text      'serviceGuid'
       t.text      'ServiceName'
       t.text      'ServiceType'
       t.text      'ServiceVersion'
@@ -189,6 +192,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.integer   'Version'
       t.text      'VolumeName'
       t.text      'win_eventlog'
+
 
       t.timestamps
     end
