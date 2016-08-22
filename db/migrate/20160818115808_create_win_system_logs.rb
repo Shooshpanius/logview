@@ -93,6 +93,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'NominalFrequency'
       t.text      'NTSTATUS'
       t.text      'Number'
+      t.text      'NumberOfGroupPolicyObjects'
       t.text      'OldSchemeGuid'
       t.datetime  'OldTime'
       t.text      'Opcode'
