@@ -34,10 +34,10 @@ class Receiver::WinEventlogController < ApplicationController
           # )
 #        end
       when "Application"
-        WinSecurityLog.create(params)
+        WinApplicationLog.create(params)
 
       else
-        WinApplicationLog.create(
+        WinEventLog.create(
             :event => params.to_xml,
             :event_id => params[:EventID],
             :channel => params[:Channel]
