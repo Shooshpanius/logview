@@ -171,6 +171,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'updatelist'
       t.text      'updateRevisionNumber'
       t.text      'updateTitle'
+      t.text      'UpdateType'
       t.text      'UserID'
       t.text      'UserSid'
       t.integer   'Version'
