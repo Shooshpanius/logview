@@ -28,6 +28,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'RecordNumber'
       t.text      'Severity'
       t.text      'SeverityValue'
+      t.text      'SnapshotPath'
       t.text      'SourceModuleName'
       t.text      'SourceModuleType'
       t.text      'SourceName'
