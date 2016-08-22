@@ -34,6 +34,7 @@ class Receiver::WinEventlogController < ApplicationController
           # )
 #        end
       when "Application"
+
         WinApplicationLog.create(params)
 
       else
