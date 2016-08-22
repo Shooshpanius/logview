@@ -104,6 +104,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'SeverityValue'
       t.text      'Severity'
       t.text      'SidHistory'
+      t.text      'SourceAddr'
       t.text      'SourceDRA'
       t.text      'SourceModuleName'
       t.text      'SourceModuleType'
