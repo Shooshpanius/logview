@@ -102,6 +102,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'param5'
       t.text      'param6'
       t.text      'param7'
+      t.text      'param8'
       t.text      'Parameter'
       t.text      'PccChanges'
       t.text      'PerformanceImplementation'
