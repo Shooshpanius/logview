@@ -28,6 +28,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'Dummy'
       t.text      'ElevatedToken'
       t.text      'EndUSN'
+      t.text      'ErrorCode'
       t.datetime  'EventTime'
       t.integer   'EventID'
       t.text      'EventSourceId'
