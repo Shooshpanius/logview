@@ -5,6 +5,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'AccountName'
       t.text      'AccountType'
       t.text      'action'
+      t.text      'AppId'
       t.text      'Category'
       t.text      'Channel'
       t.text      'controller'
