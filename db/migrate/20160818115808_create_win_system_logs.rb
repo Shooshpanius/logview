@@ -27,6 +27,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'DeviceTime'
       t.text      'DeviceVersionMajor'
       t.text      'DeviceVersionMinor'
+      t.text      'DiffAreaVolumeName'
       t.text      'DirtyPages'
       t.text      'DnsServerList'
       t.text      'Domain'
