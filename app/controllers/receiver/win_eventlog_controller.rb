@@ -32,6 +32,14 @@ class Receiver::WinEventlogController < ApplicationController
 
       when "Security"
        # begin
+
+        if params[:EventID] == 5447
+          action = params[:Action]
+          params.delete('Action')
+          params[:action] = action
+        end
+
+
           WinSecurityLog.create(params)
        # rescue
        #    WinEventLog.create(
