@@ -16,7 +16,9 @@ class Receiver::WinEventlogController < ApplicationController
        # begin
 
           if params[:EventID] == 20
+            error_code = params[:errorCode]
             params.delete('errorCode')
+            params[:ErrorCode] = error_code
           end
 
           WinSystemLog.create(params)
