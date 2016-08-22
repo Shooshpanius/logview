@@ -2,7 +2,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
   def change
     create_table :win_security_logs do |t|
 
-      t.text      'Action'
+      t.text      'action'
       t.text      'ActivityID'
       t.text      'AccessList'
       t.text      'AccessMask'
