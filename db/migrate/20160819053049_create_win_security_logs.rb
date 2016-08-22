@@ -86,7 +86,6 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'PuaPolicyId'
       t.integer   'RecordNumber'
       t.text      'RemoteEventLogging'
-      t.text      'RetryMinutes'
       t.text      'ReturnCode'
       t.text      'RestrictedAdminMode'
       t.text      'SamAccountName'

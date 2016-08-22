@@ -103,6 +103,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'Reason'
       t.integer   'RecordNumber'
       t.text      'ResetEndStart'
+      t.text      'RetryMinutes'
       t.text      'RmId'
       t.text      'Sent UpdateServer'
       t.text      'ServiceName'
