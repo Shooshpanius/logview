@@ -127,6 +127,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.datetime  'StopTime'
       t.text      'SupportInfo1'
       t.text      'SupportInfo2'
+      t.text      'Target'
       t.integer   'Task'
       t.text      'TimeProvider'
       t.text      'TimeSource'
