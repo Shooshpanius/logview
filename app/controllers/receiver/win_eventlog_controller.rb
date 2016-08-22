@@ -13,36 +13,36 @@ class Receiver::WinEventlogController < ApplicationController
     log_channel_event = params[:Channel].to_s
     case log_channel_event
       when "System"
-       begin
+       # begin
           WinSystemLog.create(params)
-       rescue
-          WinEventLog.create(
-              :event => params.to_xml,
-              :event_id => params[:EventID],
-              :channel => params[:Channel].to_s + "_rescue"
-          )
-       end
+       # rescue
+       #    WinEventLog.create(
+       #        :event => params.to_xml,
+       #        :event_id => params[:EventID],
+       #        :channel => params[:Channel].to_s + "_rescue"
+       #    )
+       # end
 
       when "Security"
-       begin
+       # begin
           WinSecurityLog.create(params)
-       rescue
-          WinEventLog.create(
-              :event => params.to_xml,
-              :event_id => params[:EventID],
-              :channel => params[:Channel].to_s + "_rescue"
-          )
-       end
+       # rescue
+       #    WinEventLog.create(
+       #        :event => params.to_xml,
+       #        :event_id => params[:EventID],
+       #        :channel => params[:Channel].to_s + "_rescue"
+       #    )
+       # end
       when "Application"
-        begin
+        # begin
           WinApplicationLog.create(params)
-        rescue
-          WinEventLog.create(
-              :event => params.to_xml,
-              :event_id => params[:EventID],
-              :channel => params[:Channel].to_s + "_rescue"
-          )
-        end
+        # rescue
+        #   WinEventLog.create(
+        #       :event => params.to_xml,
+        #       :event_id => params[:EventID],
+        #       :channel => params[:Channel].to_s + "_rescue"
+        #   )
+        # end
 
       else
         WinEventLog.create(
