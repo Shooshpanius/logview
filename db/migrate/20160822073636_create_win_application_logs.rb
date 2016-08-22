@@ -14,6 +14,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.datetime  'EventReceivedTime'
       t.datetime  'EventTime'
       t.text      'EventType'
+      t.text      'ExtraInfo'
       t.text      'Hostname'
       t.text      'Keywords'
       t.text      'Message'
