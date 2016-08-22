@@ -124,6 +124,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'Reason'
       t.integer   'RecordNumber'
       t.text      'ResetEndStart'
+      t.text      'restarttime'
       t.text      'RetryMinutes'
       t.text      'RmId'
       t.text      'schedinstalldate'
