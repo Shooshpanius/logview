@@ -7,6 +7,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'action'
       t.text      'ActivityID'
       t.text      'AppId'
+      t.text      'BackupTime'
       t.text      'Category'
       t.text      'Channel'
       t.text      'controller'
