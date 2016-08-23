@@ -201,6 +201,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'UserSid'
       t.text      'Version'
       t.text      'VolumeName'
+      t.text      'WakeTime'
       t.text      'win_eventlog'
 
 
