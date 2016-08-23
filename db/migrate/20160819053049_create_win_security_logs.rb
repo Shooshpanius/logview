@@ -91,7 +91,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'LmPackageName'
       t.text      'LoadOptions'
       t.text      'LogDroppedPacketsEnabled'
-      t.text        'LoggingResult'
+      t.text      'LoggingResult'
       t.text      'LogonGuid'
       t.text      'LogonHours'
       t.text      'LogonType'
