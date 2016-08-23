@@ -212,6 +212,8 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'Version'
       t.text      'VolumeName'
       t.text      'WakeDuration'
+      t.text      'WakeFromState'
+      t.text      'WakeSourceText'
       t.text      'WakeSourceTextLength'
       t.text      'WakeSourceType'
       t.text      'WakeTime'
