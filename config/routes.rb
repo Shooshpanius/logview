@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :receiver do
     resources :win_eventlog, path: 'win_eventlog/(:action)(:id)(.:format)'
+    resources :unix_log, path: 'unix_log/(:action)(:id)(.:format)'
   end
 
 end
