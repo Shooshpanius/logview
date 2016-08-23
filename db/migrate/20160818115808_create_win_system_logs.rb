@@ -153,6 +153,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'ShutdownActionType'
       t.text      'ShutdownEventCode'
       t.text      'ShutdownReason'
+      t.text      'SleepDuration'
       t.text      'SleepInProgress'
       t.text      'SleepTime'
       t.text      'SourceFileID'
