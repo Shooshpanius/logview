@@ -1,0 +1,2 @@
+class DovecotLog < ApplicationRecord
+end
