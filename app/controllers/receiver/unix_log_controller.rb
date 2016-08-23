@@ -22,6 +22,10 @@ class Receiver::UnixLogController < ApplicationController
 
       else
 
+        UnixTestSysLog.create(
+            :msg => params.to_xml
+        )
+
     end
 
 
