@@ -50,6 +50,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'DriverName'
       t.text      'DriverNameLength'
       t.text      'DwordVal'
+      t.text      'dwProtocols'
       t.text      'EffectiveState'
       t.text      'EndUSN'
       t.text      'EntryCount'
