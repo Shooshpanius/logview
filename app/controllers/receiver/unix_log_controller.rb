@@ -5,10 +5,19 @@ class Receiver::UnixLogController < ApplicationController
   def dovecot
     params.permit!
 
-    UnixTestSysLog.create(
-        :msg => params.to_json,
-        # :unix_log => params[unix_log].to_xml
-    )
+    source_name = params[:SourceName].to_s
+    case source_name
+      when "imap-login"
+
+        UnixTestSysLog.create(
+            :msg => params.to_json.split("=")
+        )
+
+      else
+
+    end
+
+
 
     render :head => true
 
