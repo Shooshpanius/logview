@@ -21,7 +21,10 @@ class Receiver::WinEventlogController < ApplicationController
             params[:ErrorCode] = error_code
           end
 
+
           WinSystemLog.create(params)
+          Host.create(Hostname: params[:Hostname])
+
        # rescue
        #    WinEventLog.create(
        #        :event => params.to_xml,
@@ -41,6 +44,7 @@ class Receiver::WinEventlogController < ApplicationController
 
 
           WinSecurityLog.create(params)
+          Host.create(Hostname: params[:Hostname])
        # rescue
        #    WinEventLog.create(
        #        :event => params.to_xml,
@@ -51,6 +55,7 @@ class Receiver::WinEventlogController < ApplicationController
       when "Application"
         # begin
           WinApplicationLog.create(params)
+          Host.create(Hostname: params[:Hostname])
         # rescue
         #   WinEventLog.create(
         #       :event => params.to_xml,
@@ -65,6 +70,8 @@ class Receiver::WinEventlogController < ApplicationController
             :event_id => params[:EventID],
             :channel => params[:Channel]
         )
+        Host.create(Hostname: params[:Hostname])
+
     end
     render :head => true
   end
