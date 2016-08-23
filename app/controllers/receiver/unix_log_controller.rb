@@ -10,7 +10,7 @@ class Receiver::UnixLogController < ApplicationController
       when "imap-login"
 
         UnixTestSysLog.create(
-            :msg => params.to_json.split("=")
+            :msg => params[:Message].split("=")
         )
 
       else
