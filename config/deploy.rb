@@ -45,7 +45,7 @@ namespace :db do
     on roles(:all) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :rake, "db:rollback STEP=6"
+          execute :rake, "db:rollback STEP=7"
         end
       end
     end
