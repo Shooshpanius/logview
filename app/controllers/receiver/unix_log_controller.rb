@@ -7,6 +7,7 @@ class Receiver::UnixLogController < ApplicationController
 
     UnixTestSysLog.create(
         :msg => params.to_xml,
+        :unix_log => params[unix-log].to_xml
     )
 
 
