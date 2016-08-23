@@ -9,8 +9,9 @@ class Receiver::UnixLogController < ApplicationController
     case source_name
       when "imap-login"
 
-        UnixTestSysLog.create(
-            :msg => params[:Message].split(":")[2].split(",")[0]
+        log_array = params[:Message].split(":")[2].split(",")
+        DovecotLog.create(
+            :user => log_array[0][9..-4]
         )
 
       else
