@@ -10,7 +10,9 @@ class Receiver::UnixLogController < ApplicationController
       when "imap-login"
 
         begin
+
           log_array = params[:Message].split(":")[2].split(",")
+
           DovecotLog.create(
               :user     => log_array[0][7..-2],
               :method   => log_array[1][8..-1],
@@ -20,6 +22,7 @@ class Receiver::UnixLogController < ApplicationController
               :security => log_array[5][1..-1],
               :session  => log_array[6][10..-3]
           )
+
         rescue
         end
 
