@@ -6,8 +6,8 @@ class Receiver::UnixLogController < ApplicationController
     params.permit!
 
     UnixTestSysLog.create(
-        :msg => params.to_xml,
-        :unix_log => params[unix-log].to_xml
+        :msg => params.to_json,
+        # :unix_log => params[unix_log].to_xml
     )
 
 
