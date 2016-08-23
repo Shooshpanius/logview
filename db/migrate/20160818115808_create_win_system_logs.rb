@@ -13,11 +13,15 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'AffinityCount'
       t.text      'Attributes'
       t.text      'bcdCCID'
+      t.text      'bClassGetEnvelope'
+      t.text      'bClassGetResponse'
       t.text      'BiosInitDuration'
       t.text      'BitlockerUserInputTime'
+      t.text      'bMaxCCIDBusySlots'
       t.text      'bMaxSlotIndex'
       t.text      'bNumClockSupported'
       t.text      'bNumDataRateSupported'
+      t.text      'bPINSupport'
       t.text      'bVoltageSupport'
       t.text      'BootAppStatus'
       t.text      'BootMenuPolicy'
@@ -54,6 +58,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'dwDataRate'
       t.text      'dwDefaultClock'
       t.text      'dwFeatures'
+      t.text      'dwMaxCCIDMessageLength'
       t.text      'dwMaxDataRate'
       t.text      'dwMaxIFSD'
       t.text      'dwMaximumClock'
@@ -234,6 +239,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'WakeTimerContextLength'
       t.text      'WakeTimerOwnerLength'
       t.text      'win_eventlog'
+      t.text      'wLcdLayout'
 
 
       t.timestamps
