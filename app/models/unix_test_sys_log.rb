@@ -1,0 +1,2 @@
+class UnixTestSysLog < ApplicationRecord
+end
