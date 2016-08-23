@@ -11,7 +11,13 @@ class Receiver::UnixLogController < ApplicationController
 
         log_array = params[:Message].split(":")[2].split(",")
         DovecotLog.create(
-            :user => log_array[0][9..-4]
+            :user     => log_array[0][9..-4],
+            :method   => log_array[0][7..0],
+            :rip      => log_array[0][4..0],
+            :lip      => log_array[0][4..0],
+            :mpid     => log_array[0][5..0],
+            :security => log_array[0][0..0],
+            :session  => log_array[0][10..-3]
         )
 
       else
