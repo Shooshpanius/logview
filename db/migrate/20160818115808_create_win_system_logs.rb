@@ -60,6 +60,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.datetime  'EventReceivedTime'
       t.text      'ExitBootServicesEntry'
       t.text      'ExitBootServicesExit'
+      t.text      'ExtensibleModulePath'
       t.text      'ExtraInfoLength'
       t.text      'ExtraInfoString'
       t.text      'ExtraString'
