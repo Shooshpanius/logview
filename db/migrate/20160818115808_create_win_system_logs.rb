@@ -12,6 +12,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'action'
       t.text      'AffinityCount'
       t.text      'Attributes'
+      t.text      'bcdCCID'
       t.text      'BiosInitDuration'
       t.text      'BitlockerUserInputTime'
       t.text      'BootAppStatus'
