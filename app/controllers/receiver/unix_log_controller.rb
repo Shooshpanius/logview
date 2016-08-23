@@ -10,6 +10,7 @@ class Receiver::UnixLogController < ApplicationController
         # :unix_log => params[unix_log].to_xml
     )
 
+    render :head => true
 
   end
 

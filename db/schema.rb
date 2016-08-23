@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818115808) do
+ActiveRecord::Schema.define(version: 20160823075741) do
+
+  create_table "unix_test_sys_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "msg",        limit: 65535
+    t.text     "unix_log",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "login"
@@ -24,6 +31,59 @@ ActiveRecord::Schema.define(version: 20160818115808) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "win_application_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "AccountName",             limit: 65535
+    t.text     "AccountType",             limit: 65535
+    t.text     "action",                  limit: 65535
+    t.text     "ActivityID",              limit: 65535
+    t.text     "AppId",                   limit: 65535
+    t.text     "BackupTime",              limit: 65535
+    t.text     "Category",                limit: 65535
+    t.text     "Channel",                 limit: 65535
+    t.text     "controller",              limit: 65535
+    t.text     "Detail",                  limit: 65535
+    t.text     "Domain",                  limit: 65535
+    t.text     "ERROR_EVT_UNRESOLVED",    limit: 65535
+    t.text     "ErrorCode",               limit: 65535
+    t.text     "ErrorMessage",            limit: 65535
+    t.text     "EventID",                 limit: 65535
+    t.datetime "EventReceivedTime"
+    t.datetime "EventTime"
+    t.text     "EventType",               limit: 65535
+    t.text     "ExtraInfo",               limit: 65535
+    t.text     "FilesCachedFirstPass",    limit: 65535
+    t.text     "FilesMissedSecondPass",   limit: 65535
+    t.text     "FilesResident",           limit: 65535
+    t.text     "FilesScoped",             limit: 65535
+    t.text     "Hostname",                limit: 65535
+    t.text     "Keywords",                limit: 65535
+    t.text     "ListenerAdapterProtocol", limit: 65535
+    t.text     "Message",                 limit: 65535
+    t.text     "Opcode",                  limit: 65535
+    t.text     "OpcodeValue",             limit: 65535
+    t.text     "param1",                  limit: 65535
+    t.text     "param2",                  limit: 65535
+    t.text     "param3",                  limit: 65535
+    t.text     "ProcessID",               limit: 65535
+    t.text     "ProviderGuid",            limit: 65535
+    t.text     "RecordNumber",            limit: 65535
+    t.text     "Severity",                limit: 65535
+    t.text     "SeverityValue",           limit: 65535
+    t.text     "SnapshotPath",            limit: 65535
+    t.text     "SourceModuleName",        limit: 65535
+    t.text     "SourceModuleType",        limit: 65535
+    t.text     "SourceName",              limit: 65535
+    t.text     "Task",                    limit: 65535
+    t.text     "ThreadID",                limit: 65535
+    t.text     "TotalDirectories",        limit: 65535
+    t.text     "TotalFiles",              limit: 65535
+    t.text     "UserID",                  limit: 65535
+    t.text     "Version",                 limit: 65535
+    t.text     "win_eventlog",            limit: 65535
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
   create_table "win_event_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "event_id"
     t.text     "event",      limit: 65535
@@ -32,67 +92,455 @@ ActiveRecord::Schema.define(version: 20160818115808) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "win_system_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "AccountName"
-    t.string   "AccountType"
-    t.string   "BitlockerUserInputTime"
-    t.string   "BootType"
-    t.string   "Category"
-    t.string   "Channel"
-    t.string   "DeviceName"
-    t.string   "DeviceNameLength"
-    t.string   "DeviceTime"
-    t.string   "DeviceVersionMajor"
-    t.string   "DeviceVersionMinor"
-    t.string   "Domain"
-    t.string   "EntryCount"
-    t.boolean  "ERROR-EVT-UNRESOLVED"
+  create_table "win_security_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "action",                           limit: 65535
+    t.text     "ActivityID",                       limit: 65535
+    t.text     "AccessList",                       limit: 65535
+    t.text     "AccessMask",                       limit: 65535
+    t.text     "AccountExpires",                   limit: 65535
+    t.text     "AccountSessionIdentifier",         limit: 65535
+    t.text     "ActiveProfile",                    limit: 65535
+    t.text     "AdditionalInfo",                   limit: 65535
+    t.text     "AdditionalInfo2",                  limit: 65535
+    t.text     "AdvancedOptions",                  limit: 65535
+    t.text     "AlgorithmName",                    limit: 65535
+    t.text     "AllowedToDelegateTo",              limit: 65535
+    t.text     "AppCorrelationID",                 limit: 65535
+    t.text     "AttributeLDAPDisplayName",         limit: 65535
+    t.text     "AttributeSyntaxOID",               limit: 65535
+    t.text     "AttributeValue",                   limit: 65535
+    t.text     "AuditSourceName",                  limit: 65535
+    t.text     "AuthenticationPackageName",        limit: 65535
+    t.text     "AuthenticationProvider",           limit: 65535
+    t.text     "AuthenticationServer",             limit: 65535
+    t.text     "AuthenticationType",               limit: 65535
+    t.text     "CallerProcessId",                  limit: 65535
+    t.text     "CallerProcessName",                limit: 65535
+    t.text     "CalledStationID",                  limit: 65535
+    t.text     "CallingStationID",                 limit: 65535
+    t.text     "CalloutId",                        limit: 65535
+    t.text     "CalloutKey",                       limit: 65535
+    t.text     "CalloutName",                      limit: 65535
+    t.text     "CalloutType",                      limit: 65535
+    t.text     "Categories",                       limit: 65535
+    t.text     "Category",                         limit: 65535
+    t.text     "ChangeType",                       limit: 65535
+    t.text     "Channel",                          limit: 65535
+    t.text     "ClientIPAddress",                  limit: 65535
+    t.text     "ClientName",                       limit: 65535
+    t.text     "ComputerAccountChange",            limit: 65535
+    t.text     "Conditions",                       limit: 65535
+    t.text     "ConfigAccessPolicy",               limit: 65535
+    t.text     "controller",                       limit: 65535
+    t.text     "DestinationDRA",                   limit: 65535
+    t.text     "DisableIntegrityChecks",           limit: 65535
+    t.text     "DisplayName",                      limit: 65535
+    t.text     "DnsHostName",                      limit: 65535
+    t.text     "DSName",                           limit: 65535
+    t.text     "DSType",                           limit: 65535
+    t.text     "Dummy",                            limit: 65535
+    t.text     "EAPType",                          limit: 65535
+    t.text     "ElevatedToken",                    limit: 65535
+    t.text     "EndUSN",                           limit: 65535
+    t.text     "ErrorCode",                        limit: 65535
     t.datetime "EventTime"
     t.integer  "EventID"
-    t.string   "EventType"
+    t.text     "EventSourceId",                    limit: 65535
+    t.text     "EventType",                        limit: 65535
     t.datetime "EventReceivedTime"
-    t.string   "ExitBootServicesEntry"
-    t.string   "ExitBootServicesExit"
-    t.string   "ExtraInfoLength"
-    t.string   "ExtraInfoString"
-    t.string   "FilterID"
-    t.string   "FinalStatus"
-    t.string   "Hostname"
-    t.integer  "Keywords"
-    t.string   "Level"
-    t.integer  "LastBootGood"
-    t.integer  "LastShutdownGood"
-    t.string   "LoadOSImageStart"
-    t.text     "Message",                limit: 65535
-    t.string   "NTSTATUS"
-    t.string   "Opcode"
-    t.integer  "OpcodeValue"
-    t.integer  "ProcessID"
-    t.string   "ProviderGuid"
-    t.integer  "RecordNumber"
-    t.string   "ResetEndStart"
-    t.integer  "SeverityValue"
-    t.string   "Severity"
-    t.string   "SourceFileID"
-    t.string   "SourceLine"
-    t.string   "SourceName"
-    t.string   "SourceTag"
-    t.string   "StartOSImageStart"
-    t.integer  "Task"
-    t.string   "TimeSource"
-    t.integer  "ThreadID"
-    t.string   "serviceGuid"
-    t.string   "SourceModuleName"
-    t.string   "SourceModuleType"
-    t.string   "updateGuid"
-    t.string   "updateRevisionNumber"
-    t.string   "updateTitle"
-    t.string   "UserID"
-    t.integer  "Version"
-    t.string   "VolumeName"
-    t.text     "win_eventlog",           limit: 65535
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.text     "ExtendedQuarantineState",          limit: 65535
+    t.text     "FilterId",                         limit: 65535
+    t.text     "FilterKey",                        limit: 65535
+    t.text     "FilterName",                       limit: 65535
+    t.text     "FilterType",                       limit: 65535
+    t.text     "FlightSigning",                    limit: 65535
+    t.text     "FullyQualifiedSubjectMachineName", limit: 65535
+    t.text     "FullyQualifiedSubjectUserName",    limit: 65535
+    t.text     "GPOList",                          limit: 65535
+    t.text     "GroupPolicyApplied",               limit: 65535
+    t.text     "HandleId",                         limit: 65535
+    t.text     "HomeDirectory",                    limit: 65535
+    t.text     "HomePath",                         limit: 65535
+    t.text     "HypervisorDebug",                  limit: 65535
+    t.text     "HypervisorLaunchType",             limit: 65535
+    t.text     "HypervisorLoadOptions",            limit: 65535
+    t.text     "Hostname",                         limit: 65535
+    t.text     "ImpersonationLevel",               limit: 65535
+    t.text     "IpAddress",                        limit: 65535
+    t.text     "IpPort",                           limit: 65535
+    t.text     "KernelDebug",                      limit: 65535
+    t.text     "KeyFilePath",                      limit: 65535
+    t.text     "KeyLength",                        limit: 65535
+    t.text     "KeyName",                          limit: 65535
+    t.text     "KeyType",                          limit: 65535
+    t.text     "Keywords",                         limit: 65535
+    t.text     "LayerId",                          limit: 65535
+    t.text     "LayerKey",                         limit: 65535
+    t.text     "LayerName",                        limit: 65535
+    t.text     "LmPackageName",                    limit: 65535
+    t.text     "LoadOptions",                      limit: 65535
+    t.text     "LogDroppedPacketsEnabled",         limit: 65535
+    t.text     "LoggingResult",                    limit: 65535
+    t.text     "LogonGuid",                        limit: 65535
+    t.text     "LogonHours",                       limit: 65535
+    t.text     "LogonType",                        limit: 65535
+    t.text     "LogonProcessName",                 limit: 65535
+    t.text     "LogSuccessfulConnectionsEnabled",  limit: 65535
+    t.text     "MachineInventory",                 limit: 65535
+    t.text     "MandatoryLabel",                   limit: 65535
+    t.text     "Message",                          limit: 65535
+    t.text     "MemberName",                       limit: 65535
+    t.text     "MemberSid",                        limit: 65535
+    t.text     "MulticastFlowsEnabled",            limit: 65535
+    t.text     "NamingContext",                    limit: 65535
+    t.text     "NASIdentifier",                    limit: 65535
+    t.text     "NASIPv4Address",                   limit: 65535
+    t.text     "NASIPv6Address",                   limit: 65535
+    t.text     "NASPort",                          limit: 65535
+    t.text     "NASPortType",                      limit: 65535
+    t.text     "NetworkPolicyName",                limit: 65535
+    t.text     "NewProcessId",                     limit: 65535
+    t.text     "NewProcessName",                   limit: 65535
+    t.text     "NewSd",                            limit: 65535
+    t.datetime "NewTime"
+    t.text     "NewUacValue",                      limit: 65535
+    t.text     "NotificationPackageName",          limit: 65535
+    t.text     "ObjectClass",                      limit: 65535
+    t.text     "ObjectDN",                         limit: 65535
+    t.text     "ObjectGUID",                       limit: 65535
+    t.text     "ObjectName",                       limit: 65535
+    t.text     "ObjectType",                       limit: 65535
+    t.text     "ObjectServer",                     limit: 65535
+    t.text     "OldSd",                            limit: 65535
+    t.text     "OldUacValue",                      limit: 65535
+    t.text     "Opcode",                           limit: 65535
+    t.text     "OpcodeValue",                      limit: 65535
+    t.text     "OpCorrelationID",                  limit: 65535
+    t.text     "Operation",                        limit: 65535
+    t.text     "OperationMode",                    limit: 65535
+    t.text     "OperationType",                    limit: 65535
+    t.text     "Options",                          limit: 65535
+    t.text     "PackageName",                      limit: 65535
+    t.text     "param1",                           limit: 65535
+    t.text     "param2",                           limit: 65535
+    t.text     "param3",                           limit: 65535
+    t.text     "param4",                           limit: 65535
+    t.text     "param5",                           limit: 65535
+    t.text     "param6",                           limit: 65535
+    t.text     "param7",                           limit: 65535
+    t.text     "ParentProcessName",                limit: 65535
+    t.text     "PasswordLastSet",                  limit: 65535
+    t.text     "PreAuthType",                      limit: 65535
+    t.datetime "PreviousTime"
+    t.text     "PrimaryGroupId",                   limit: 65535
+    t.text     "PrivilegeList",                    limit: 65535
+    t.text     "ProcessID",                        limit: 65535
+    t.text     "ProcessName",                      limit: 65535
+    t.text     "ProductName",                      limit: 65535
+    t.text     "Profile",                          limit: 65535
+    t.text     "ProfilePath",                      limit: 65535
+    t.text     "ProfileUsed",                      limit: 65535
+    t.text     "Properties",                       limit: 65535
+    t.text     "ProviderGuid",                     limit: 65535
+    t.text     "ProviderKey",                      limit: 65535
+    t.text     "ProviderName",                     limit: 65535
+    t.text     "ProviderContextKey",               limit: 65535
+    t.text     "ProviderContextName",              limit: 65535
+    t.text     "ProviderContextType",              limit: 65535
+    t.text     "ProviderType",                     limit: 65535
+    t.text     "ProxyPolicyName",                  limit: 65535
+    t.text     "PuaCount",                         limit: 65535
+    t.text     "PuaPolicyId",                      limit: 65535
+    t.text     "QuarantineHelpURL",                limit: 65535
+    t.text     "QuarantineSessionID",              limit: 65535
+    t.text     "QuarantineSessionIdentifier",      limit: 65535
+    t.text     "QuarantineState",                  limit: 65535
+    t.text     "QuarantineSystemHealthResult",     limit: 65535
+    t.text     "RecordNumber",                     limit: 65535
+    t.text     "RemoteAdminEnabled",               limit: 65535
+    t.text     "RemoteEventLogging",               limit: 65535
+    t.text     "ReturnCode",                       limit: 65535
+    t.text     "RestrictedAdminMode",              limit: 65535
+    t.text     "RuleId",                           limit: 65535
+    t.text     "RuleName",                         limit: 65535
+    t.text     "SamAccountName",                   limit: 65535
+    t.text     "SecurityPackageName",              limit: 65535
+    t.text     "ScriptPath",                       limit: 65535
+    t.text     "ServiceName",                      limit: 65535
+    t.text     "ServicePrincipalNames",            limit: 65535
+    t.text     "ServiceSid",                       limit: 65535
+    t.text     "SessionID",                        limit: 65535
+    t.text     "SeverityValue",                    limit: 65535
+    t.text     "Severity",                         limit: 65535
+    t.text     "SidHistory",                       limit: 65535
+    t.text     "SourceAddr",                       limit: 65535
+    t.text     "SourceDRA",                        limit: 65535
+    t.text     "SourceModuleName",                 limit: 65535
+    t.text     "SourceModuleType",                 limit: 65535
+    t.text     "SourceName",                       limit: 65535
+    t.text     "StartUSN",                         limit: 65535
+    t.text     "Status",                           limit: 65535
+    t.text     "StatusCode",                       limit: 65535
+    t.text     "SubjectDomainName",                limit: 65535
+    t.text     "SubjectLogonId",                   limit: 65535
+    t.text     "SubjectMachineName",               limit: 65535
+    t.text     "SubjectMachineSID",                limit: 65535
+    t.text     "SubjectUserName",                  limit: 65535
+    t.text     "SubjectUserSid",                   limit: 65535
+    t.text     "SubLayerKey",                      limit: 65535
+    t.text     "SubLayerName",                     limit: 65535
+    t.text     "SubLayerType",                     limit: 65535
+    t.text     "TargetDomainName",                 limit: 65535
+    t.text     "TargetInfo",                       limit: 65535
+    t.text     "TargetLinkedLogonId",              limit: 65535
+    t.text     "TargetLogonGuid",                  limit: 65535
+    t.text     "TargetLogonId",                    limit: 65535
+    t.text     "TargetOutboundDomainName",         limit: 65535
+    t.text     "TargetOutboundUserName",           limit: 65535
+    t.text     "TargetServerName",                 limit: 65535
+    t.text     "TargetSid",                        limit: 65535
+    t.text     "TargetUserName",                   limit: 65535
+    t.text     "TargetUserSid",                    limit: 65535
+    t.text     "Task",                             limit: 65535
+    t.text     "TestSigning",                      limit: 65535
+    t.text     "ThreadID",                         limit: 65535
+    t.text     "TicketEncryptionType",             limit: 65535
+    t.text     "TicketOptions",                    limit: 65535
+    t.text     "TokenElevationType",               limit: 65535
+    t.text     "TransmittedServices",              limit: 65535
+    t.text     "UserAccountControl",               limit: 65535
+    t.text     "UserName",                         limit: 65535
+    t.text     "UserParameters",                   limit: 65535
+    t.text     "UserPrincipalName",                limit: 65535
+    t.text     "UserSid",                          limit: 65535
+    t.text     "UserWorkstations",                 limit: 65535
+    t.text     "Version",                          limit: 65535
+    t.text     "VirtualAccount",                   limit: 65535
+    t.text     "VsmLaunchType",                    limit: 65535
+    t.text     "Weight",                           limit: 65535
+    t.text     "win_eventlog",                     limit: 65535
+    t.text     "Workstation",                      limit: 65535
+    t.text     "WorkstationName",                  limit: 65535
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+  end
+
+  create_table "win_system_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "AccountName",                     limit: 65535
+    t.text     "AccountType",                     limit: 65535
+    t.text     "ActivityID",                      limit: 65535
+    t.text     "AdapterName",                     limit: 65535
+    t.text     "AdapterSuffixName",               limit: 65535
+    t.text     "Address",                         limit: 65535
+    t.text     "AddressLength",                   limit: 65535
+    t.text     "action",                          limit: 65535
+    t.text     "AffinityCount",                   limit: 65535
+    t.text     "Attributes",                      limit: 65535
+    t.text     "BiosInitDuration",                limit: 65535
+    t.text     "BitlockerUserInputTime",          limit: 65535
+    t.text     "BootAppStatus",                   limit: 65535
+    t.text     "BootMenuPolicy",                  limit: 65535
+    t.text     "BootMode",                        limit: 65535
+    t.text     "BootType",                        limit: 65535
+    t.text     "BugcheckCode",                    limit: 65535
+    t.text     "BugcheckParameter1",              limit: 65535
+    t.text     "BugcheckParameter2",              limit: 65535
+    t.text     "BugcheckParameter3",              limit: 65535
+    t.text     "BugcheckParameter4",              limit: 65535
+    t.text     "BuildVersion",                    limit: 65535
+    t.text     "CapDurationInSeconds",            limit: 65535
+    t.text     "Caption",                         limit: 65535
+    t.text     "Category",                        limit: 65535
+    t.text     "Channel",                         limit: 65535
+    t.text     "ClientRealm",                     limit: 65535
+    t.text     "controller",                      limit: 65535
+    t.text     "CorruptionActionState",           limit: 65535
+    t.text     "DCName",                          limit: 65535
+    t.text     "DeviceName",                      limit: 65535
+    t.text     "DeviceNameLength",                limit: 65535
+    t.text     "DeviceTime",                      limit: 65535
+    t.text     "DeviceVersionMajor",              limit: 65535
+    t.text     "DeviceVersionMinor",              limit: 65535
+    t.text     "DiffAreaVolumeName",              limit: 65535
+    t.text     "DirtyPages",                      limit: 65535
+    t.text     "DnsServerList",                   limit: 65535
+    t.text     "Domain",                          limit: 65535
+    t.text     "DomainPeer",                      limit: 65535
+    t.text     "DriveName",                       limit: 65535
+    t.text     "DriverInitDuration",              limit: 65535
+    t.text     "DriverName",                      limit: 65535
+    t.text     "DriverNameLength",                limit: 65535
+    t.text     "DwordVal",                        limit: 65535
+    t.text     "EffectiveState",                  limit: 65535
+    t.text     "EndUSN",                          limit: 65535
+    t.text     "EntryCount",                      limit: 65535
+    t.text     "ERROR-EVT-UNRESOLVED",            limit: 65535
+    t.text     "ERROR_EVT_UNRESOLVED",            limit: 65535
+    t.text     "error",                           limit: 65535
+    t.text     "ErrorCode",                       limit: 65535
+    t.text     "ErrorDescription",                limit: 65535
+    t.text     "ErrorMessage",                    limit: 65535
+    t.datetime "EventTime"
+    t.integer  "EventID"
+    t.text     "EventType",                       limit: 65535
+    t.datetime "EventReceivedTime"
+    t.text     "ExitBootServicesEntry",           limit: 65535
+    t.text     "ExitBootServicesExit",            limit: 65535
+    t.text     "ExtensibleModulePath",            limit: 65535
+    t.text     "ExtraInfoLength",                 limit: 65535
+    t.text     "ExtraInfoString",                 limit: 65535
+    t.text     "ExtraString",                     limit: 65535
+    t.text     "ExtraStringLength",               limit: 65535
+    t.text     "FailureName",                     limit: 65535
+    t.text     "FailureNameLength",               limit: 65535
+    t.text     "FilePath",                        limit: 65535
+    t.text     "FilterID",                        limit: 65535
+    t.text     "FinalStatus",                     limit: 65535
+    t.text     "Flags",                           limit: 65535
+    t.text     "GPOCNName",                       limit: 65535
+    t.text     "Group",                           limit: 65535
+    t.text     "HiberPagesWritten",               limit: 65535
+    t.text     "HiberReadDuration",               limit: 65535
+    t.text     "HiberWriteDuration",              limit: 65535
+    t.text     "HiveName",                        limit: 65535
+    t.text     "HiveNameLength",                  limit: 65535
+    t.text     "Hostname",                        limit: 65535
+    t.text     "IdleImplementation",              limit: 65535
+    t.text     "IdleStateCount",                  limit: 65535
+    t.text     "ImagePath",                       limit: 65535
+    t.text     "Interface",                       limit: 65535
+    t.text     "InternalCode",                    limit: 65535
+    t.text     "Ipaddress",                       limit: 65535
+    t.text     "KDCRealm",                        limit: 65535
+    t.text     "KeysUpdated",                     limit: 65535
+    t.text     "Keywords",                        limit: 65535
+    t.text     "Level",                           limit: 65535
+    t.text     "LastBootGood",                    limit: 65535
+    t.text     "LastShutdownGood",                limit: 65535
+    t.text     "LoadOSImageStart",                limit: 65535
+    t.text     "MajorVersion",                    limit: 65535
+    t.text     "ManualPeer",                      limit: 65535
+    t.text     "MaximumPerformancePercent",       limit: 65535
+    t.text     "MinimumPerformancePercent",       limit: 65535
+    t.text     "MinimumThrottlePercent",          limit: 65535
+    t.text     "MinorVersion",                    limit: 65535
+    t.text     "Message",                         limit: 65535
+    t.text     "NewSchemeGuid",                   limit: 65535
+    t.text     "NewSize",                         limit: 65535
+    t.text     "NewTime",                         limit: 65535
+    t.text     "NominalFrequency",                limit: 65535
+    t.text     "NoMultiStageResumeReason",        limit: 65535
+    t.text     "NTSTATUS",                        limit: 65535
+    t.text     "Number",                          limit: 65535
+    t.text     "NumberOfGroupPolicyObjects",      limit: 65535
+    t.text     "OldSchemeGuid",                   limit: 65535
+    t.text     "OldTime",                         limit: 65535
+    t.text     "Opcode",                          limit: 65535
+    t.text     "OpcodeValue",                     limit: 65535
+    t.text     "OriginalSize",                    limit: 65535
+    t.text     "param1",                          limit: 65535
+    t.text     "param2",                          limit: 65535
+    t.text     "param3",                          limit: 65535
+    t.text     "param4",                          limit: 65535
+    t.text     "param5",                          limit: 65535
+    t.text     "param6",                          limit: 65535
+    t.text     "param7",                          limit: 65535
+    t.text     "param8",                          limit: 65535
+    t.text     "param9",                          limit: 65535
+    t.text     "param10",                         limit: 65535
+    t.text     "param11",                         limit: 65535
+    t.text     "Parameter",                       limit: 65535
+    t.text     "PccChanges",                      limit: 65535
+    t.text     "PerformanceImplementation",       limit: 65535
+    t.text     "PerfStateCount",                  limit: 65535
+    t.text     "PowerButtonTimestamp",            limit: 65535
+    t.text     "PpcChanges",                      limit: 65535
+    t.text     "ProcessID",                       limit: 65535
+    t.text     "ProcessPath",                     limit: 65535
+    t.text     "ProcessPid",                      limit: 65535
+    t.text     "ProcessingMode",                  limit: 65535
+    t.text     "ProcessingTimeInMilliseconds",    limit: 65535
+    t.text     "ProgrammedWakeTimeAc",            limit: 65535
+    t.text     "ProgrammedWakeTimeDc",            limit: 65535
+    t.text     "ProtocolType",                    limit: 65535
+    t.text     "ProviderGuid",                    limit: 65535
+    t.text     "QfeVersion",                      limit: 65535
+    t.text     "QueryName",                       limit: 65535
+    t.text     "Reason",                          limit: 65535
+    t.text     "RecordNumber",                    limit: 65535
+    t.text     "ResetEndStart",                   limit: 65535
+    t.text     "restarttime",                     limit: 65535
+    t.text     "RetryMinutes",                    limit: 65535
+    t.text     "RmId",                            limit: 65535
+    t.text     "schedinstalldate",                limit: 65535
+    t.text     "schedinstalltime",                limit: 65535
+    t.text     "Sent UpdateServer",               limit: 65535
+    t.text     "Server",                          limit: 65535
+    t.text     "serviceGuid",                     limit: 65535
+    t.text     "ServiceName",                     limit: 65535
+    t.text     "ServiceType",                     limit: 65535
+    t.text     "ServiceVersion",                  limit: 65535
+    t.text     "SessionID",                       limit: 65535
+    t.text     "SeverityValue",                   limit: 65535
+    t.text     "Severity",                        limit: 65535
+    t.text     "ShutdownActionType",              limit: 65535
+    t.text     "ShutdownEventCode",               limit: 65535
+    t.text     "ShutdownReason",                  limit: 65535
+    t.text     "SleepDuration",                   limit: 65535
+    t.text     "SleepInProgress",                 limit: 65535
+    t.text     "SleepTime",                       limit: 65535
+    t.text     "SourceFileID",                    limit: 65535
+    t.text     "SourceLine",                      limit: 65535
+    t.text     "SourceModuleName",                limit: 65535
+    t.text     "SourceModuleType",                limit: 65535
+    t.text     "SourceName",                      limit: 65535
+    t.text     "SourceTag",                       limit: 65535
+    t.text     "spn1",                            limit: 65535
+    t.text     "spn2",                            limit: 65535
+    t.text     "StartOSImageStart",               limit: 65535
+    t.text     "StartTime",                       limit: 65535
+    t.text     "StartType",                       limit: 65535
+    t.text     "Status",                          limit: 65535
+    t.text     "StatusCode",                      limit: 65535
+    t.text     "StopTime",                        limit: 65535
+    t.text     "SupportInfo1",                    limit: 65535
+    t.text     "SupportInfo2",                    limit: 65535
+    t.text     "LookupType",                      limit: 65535
+    t.text     "Target",                          limit: 65535
+    t.text     "Targetname",                      limit: 65535
+    t.text     "TargetRealm",                     limit: 65535
+    t.text     "TargetState",                     limit: 65535
+    t.text     "Task",                            limit: 65535
+    t.text     "TaskName",                        limit: 65535
+    t.text     "TimeDifferenceMilliseconds",      limit: 65535
+    t.text     "TimeProvider",                    limit: 65535
+    t.text     "TimeSampleSeconds",               limit: 65535
+    t.text     "TimeSource",                      limit: 65535
+    t.text     "ThermalZoneDeviceInstance",       limit: 65535
+    t.text     "ThermalZoneDeviceInstanceLength", limit: 65535
+    t.text     "ThreadID",                        limit: 65535
+    t.text     "ThrottleStateCount",              limit: 65535
+    t.text     "TmId",                            limit: 65535
+    t.text     "TpcChanges",                      limit: 65535
+    t.text     "TSId",                            limit: 65535
+    t.text     "updateGuid",                      limit: 65535
+    t.text     "updatelist",                      limit: 65535
+    t.text     "updateRevisionNumber",            limit: 65535
+    t.text     "updateTitle",                     limit: 65535
+    t.text     "UpdateType",                      limit: 65535
+    t.text     "UserID",                          limit: 65535
+    t.text     "UserSid",                         limit: 65535
+    t.text     "Version",                         limit: 65535
+    t.text     "VolumeName",                      limit: 65535
+    t.text     "WakeDuration",                    limit: 65535
+    t.text     "WakeSourceTextLength",            limit: 65535
+    t.text     "WakeSourceType",                  limit: 65535
+    t.text     "WakeTime",                        limit: 65535
+    t.text     "WakeTimerContextLength",          limit: 65535
+    t.text     "WakeTimerOwnerLength",            limit: 65535
+    t.text     "win_eventlog",                    limit: 65535
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
 end
