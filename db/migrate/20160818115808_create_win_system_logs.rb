@@ -15,6 +15,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'bcdCCID'
       t.text      'BiosInitDuration'
       t.text      'BitlockerUserInputTime'
+      t.text      'bMaxSlotIndex'
       t.text      'BootAppStatus'
       t.text      'BootMenuPolicy'
       t.text      'BootMode'
