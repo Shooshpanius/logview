@@ -23,7 +23,7 @@ class Receiver::WinEventlogController < ApplicationController
 
 
           WinSystemLog.create(params)
-          Host.create(Hostname: params[:Hostname])
+          Host.where(:Hostname => params[:Hostname]).first_or_create(:locked => false)
 
        # rescue
        #    WinEventLog.create(
@@ -44,7 +44,7 @@ class Receiver::WinEventlogController < ApplicationController
 
 
           WinSecurityLog.create(params)
-          Host.create(Hostname: params[:Hostname])
+          Host.where(:Hostname => params[:Hostname]).first_or_create(:locked => false)
        # rescue
        #    WinEventLog.create(
        #        :event => params.to_xml,
@@ -55,7 +55,7 @@ class Receiver::WinEventlogController < ApplicationController
       when "Application"
         # begin
           WinApplicationLog.create(params)
-          Host.create(Hostname: params[:Hostname])
+          Host.where(:Hostname => params[:Hostname]).first_or_create(:locked => false)
         # rescue
         #   WinEventLog.create(
         #       :event => params.to_xml,
@@ -70,7 +70,7 @@ class Receiver::WinEventlogController < ApplicationController
             :event_id => params[:EventID],
             :channel => params[:Channel]
         )
-        Host.create(Hostname: params[:Hostname])
+        Host.where(:Hostname => params[:Hostname]).first_or_create(:locked => false)
 
     end
     render :head => true
