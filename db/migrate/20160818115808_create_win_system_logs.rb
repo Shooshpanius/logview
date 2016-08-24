@@ -99,7 +99,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'Group'
       t.text      'HiberPagesWritten'
       t.text      'HiberReadDuration'
-      t.text      'HiberWriteD  uration'
+      t.text      'HiberWriteDuration'
       t.text      'HiveName'
       t.text      'HiveNameLength'
       t.text      'Hostname'
