@@ -48,6 +48,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'ThreadID'
       t.text      'TotalDirectories'
       t.text      'TotalFiles'
+      t.text      'User'
       t.text      'UserID'
       t.text      'Version'
       t.text      'win_eventlog'
