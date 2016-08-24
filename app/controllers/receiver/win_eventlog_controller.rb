@@ -5,6 +5,8 @@ class Receiver::WinEventlogController < ApplicationController
   def in
     params.permit!
 
+    params.delete('win-eventlog')
+
     begin
       params[:AccountName] = params[:AccountName].force_encoding('iso-8859-1').encode('utf-8')
     rescue
