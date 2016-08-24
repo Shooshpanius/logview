@@ -36,6 +36,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'param3'
       t.text      'ProcessID'
       t.text      'ProviderGuid'
+      t.text      'PsmKey'
       t.text      'RecordNumber'
       t.text      'Severity'
       t.text      'SeverityValue'
