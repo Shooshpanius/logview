@@ -134,6 +134,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'MaxSystemTimeChangeSeconds'
       t.text      'MinimumPerformancePercent'
       t.text      'MinimumThrottlePercent'
+      t.text      'MiniportEventEnum'
       t.text      'MinorVersion'
       t.text      'Message'
       t.text      'NewSchemeGuid'
