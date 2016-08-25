@@ -38,7 +38,7 @@ class Receiver::WinEventlogController < ApplicationController
       when "Security"
        begin
 
-        if params[:EventID] == 5447
+        if params[:EventID] == 5447||5441
           action = params[:Action]
           params.delete('Action')
           params[:action] = action
