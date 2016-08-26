@@ -233,6 +233,8 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'Status'
       t.text      'StatusCode'
       t.text      'StopTime'
+      t.text      'String'
+      t.text      'StringCount'
       t.text      'SupportInfo1'
       t.text      'SupportInfo2'
       t.text      'SystemTimeChangeSeconds'
