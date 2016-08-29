@@ -4,6 +4,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
 
       t.text      'action'
       t.text      'ActivityID'
+      t.text      'AccessGranted'
       t.text      'AccessList'
       t.text      'AccessMask'
       t.text      'AccessReason'
