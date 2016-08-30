@@ -105,6 +105,7 @@ class CreateWinSecurityLogs < ActiveRecord::Migration[5.0]
       t.text      'Message'
       t.text      'MemberName'
       t.text      'MemberSid'
+      t.text      'Module'
       t.text      'MulticastFlowsEnabled'
       t.text      'NamingContext'
       t.text      'NASIdentifier'

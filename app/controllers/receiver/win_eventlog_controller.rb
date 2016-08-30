@@ -23,6 +23,11 @@ class Receiver::WinEventlogController < ApplicationController
             params[:ErrorCode] = error_code
           end
 
+          if params[:EventID] == 40960
+            error = params[:Error]
+            params.delete('Error')
+            params[:error] = error
+          end
 
           WinSystemLog.create(params)
           Host.where(:Hostname => params[:Hostname]).first_or_create

@@ -196,6 +196,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'ProcessingTimeInMilliseconds'
       t.text      'ProgrammedWakeTimeAc'
       t.text      'ProgrammedWakeTimeDc'
+      t.text      'Protocol'
       t.text      'ProtocolType'
       t.text      'ProviderGuid'
       t.text      'QfeVersion'
