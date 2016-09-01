@@ -23,6 +23,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.datetime  'EventReceivedTime'
       t.datetime  'EventTime'
       t.text      'EventType'
+      t.text      'exception'
       t.text      'ExtraInfo'
       t.text      'FilesCachedFirstPass'
       t.text      'FilesMissedSecondPass'
