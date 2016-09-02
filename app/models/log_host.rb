@@ -1,0 +1,2 @@
+class LogHost < ApplicationRecord
+end
