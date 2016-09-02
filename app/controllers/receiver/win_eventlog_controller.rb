@@ -24,10 +24,9 @@ class Receiver::WinEventlogController < ApplicationController
           end
 
           if params[:EventID] == 16962
-            # default_sd_string = params['Default-SD-String:']
-            params.delete('Default-SD-String:')
-            params.delete('Default_SD_String:')
-            # params[:Default-SD-String] = default_sd_string
+            default_sd_string = params['Default SD String:']
+            params.delete('Default SD String:')
+            params[:Default-SD-String] = default_sd_string
           end
 
           if params[:EventID] == 40960
