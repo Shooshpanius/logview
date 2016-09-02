@@ -186,6 +186,7 @@ class CreateWinSystemLogs < ActiveRecord::Migration[5.0]
       t.text      'OldTime'
       t.text      'Opcode'
       t.text      'OpcodeValue'
+      t.text      'OptionSelected'
       t.text      'Origin'
       t.text      'OriginalSize'
       t.text      'Outcome'
