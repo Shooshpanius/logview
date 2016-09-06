@@ -30,6 +30,13 @@ class Receiver::WinEventlogController < ApplicationController
           #   # params[:Default-SD-String] = default_sd_string
           # end
 
+          if params[:EventID] == 16953
+            params.delete('Error-code:')
+            params.delete('Registry-value:')
+            params.delete('Registry-key:')
+            params.delete('NotificationPackage:')
+          end
+
           if params[:EventID] == 40960
             error = params[:Error]
             params.delete('Error')

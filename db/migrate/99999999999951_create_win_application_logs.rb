@@ -12,6 +12,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'Channel'
       t.text      'Component'
       t.text      'controller'
+      t.text      'CorruptionId'
       t.text      'Detail'
       t.text      'Domain'
       t.text      'Error'
