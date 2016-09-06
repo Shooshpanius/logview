@@ -1,0 +1,2 @@
+class LogMailbox < ApplicationRecord
+end
