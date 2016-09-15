@@ -48,6 +48,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'OmitPropertySourceUrl'
       t.text      'Opcode'
       t.text      'OpcodeValue'
+      t.text      'Options'
       t.text      'param1'
       t.text      'param2'
       t.text      'param3'
