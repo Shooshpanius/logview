@@ -23,6 +23,13 @@ class Receiver::WinEventlogController < ApplicationController
             params[:ErrorCode] = error_code
           end
 
+          if params[:EventID] == 1026
+            error_code = params[:Error-Code]
+            params.delete('Error Code')
+            params.delete('Error-Code')
+            params[:Error-Code] = error_code
+          end
+
           if params[:EventID] == 16962
             params.delete('Default-SD-String:')
           end
