@@ -41,6 +41,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'KeepPropertySourceUrl'
       t.text      'Keywords'
       t.text      'ListenerAdapterProtocol'
+      t.text      'MachineKeys'
       t.text      'Message'
       t.text      'OmitPropertyCanonicalName'
       t.text      'OmitPropertyProduct'
