@@ -76,6 +76,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'SourceModuleName'
       t.text      'SourceModuleType'
       t.text      'SourceName'
+      t.text      'Status'
       t.text      'Task'
       t.text      'ThreadID'
       t.text      'ToFolder'
