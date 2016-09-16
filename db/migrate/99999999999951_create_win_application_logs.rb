@@ -27,6 +27,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'EventType'
       t.text      'exception'
       t.text      'ExtraInfo'
+      t.text      'File'
       t.text      'FilesCachedFirstPass'
       t.text      'FilesMissedSecondPass'
       t.text      'FilesResident'
