@@ -27,7 +27,7 @@ class Receiver::WinEventlogController < ApplicationController
             error_code = params[:Error-Code]
             params.delete('Error Code')
             params.delete('Error-Code')
-            params[:Error-Code] = error_code
+            params[:ErrorCode] = error_code
           end
 
           if params[:EventID] == 16962
