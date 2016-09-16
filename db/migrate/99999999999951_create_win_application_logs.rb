@@ -86,6 +86,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'URL'
       t.text      'User'
       t.text      'UserID'
+      t.text      'UserKeys'
       t.text      'Version'
       t.text      'win_eventlog'
 
