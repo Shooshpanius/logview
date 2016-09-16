@@ -62,6 +62,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'param11'
       t.text      'param12'
       t.text      'ProcessID'
+      t.text      'ProtocolHostProcessID'
       t.text      'ProviderGuid'
       t.text      'PsmKey'
       t.text      'Reason'
