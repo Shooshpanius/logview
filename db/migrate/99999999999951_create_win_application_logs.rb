@@ -32,6 +32,7 @@ class CreateWinApplicationLogs < ActiveRecord::Migration[5.0]
       t.text      'FilesMissedSecondPass'
       t.text      'FilesResident'
       t.text      'FilesScoped'
+      t.text      'FilterHostProcessID'
       t.text      'FromFolder'
       t.text      'Hostname'
       t.text      'KeepPropertyCanonicalName'
